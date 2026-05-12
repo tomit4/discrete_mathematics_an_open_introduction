@@ -25,7 +25,7 @@ $$ \exists x \left(P(x) \wedge Q(x)\right) $$
 If we say that $x$ is "it", and $P(x)$ is "the way it ought to be", and $Q(x)$
 is "Mom is coming round to put it back," then we can write this as:
 
-$$ P(x) \to Q(x) $$
+$$ \exists x \left(P(x) \to Q(x)\right) $$
 
 This is an atomic statement, as both $P(x)$ and $Q(x)$ cannot be divided into
 smaller elements.

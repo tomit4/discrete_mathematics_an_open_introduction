@@ -1,3 +1,7 @@
+Before reading on to the main content of the section, complete this preview
+activity to start thinking about the types of questions this section will
+address.
+
 1.
 
 Q: Which of the following sentences should count as statements? That is, for
@@ -35,10 +39,12 @@ reasonable responses to this claim, from a logical point of view?
 
     D. The statement is false because everyone who likes pineapple on pizza does NOT like pineapple in smoothies.
 
-A: From a logical point of view, statements A, C, and D are all reasonable
-responses. Only B is not reasonable because it is a conclusion based on an
-assertion that was never made (i.e. the roommate never claimed that pizza
-smoothie is good).
+A: From a logical point of view, statements A an C are both reasonable
+responses. B is not reasonable because it is a conclusion based on an assertion
+that was never made (i.e. the roommate never claimed that pizza smoothie is
+good). D is not logically valid because it concludes by making a further
+assertion that everyone who likes pineapple on pizza does NOT like pineapple in
+smoothies, which the original assertion does not include.
 
 3.
 
@@ -88,8 +94,7 @@ knight. What can you say to this?
 
 A:
 
-C is the only verifiable logical argument. Since we only have each troll's word
-on whether they are a knave(lying) or a knight (telling the truth), there is
-always the potential that they are lying. Without another external way of
-validating whether they are a knave or a knight, we cannot validate the
-roommate's assertion.
+A is correct. If it is not true that all trolls are knaves, then there must be
+at least 1 knight, since those are the only two states a Troll can be in
+(truthful=knight, lying=knave), and if they _all_ are NOT knaves, then at least
+one of them _must_ be a knight.
