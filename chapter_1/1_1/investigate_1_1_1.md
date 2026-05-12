@@ -11,32 +11,30 @@ Troll 3: Either we are all knaves, or at least one of us is a knight.
 
 Which troll is which?
 
+Spend a few minutes thinking about the Investigate problem above. What could you
+conclude if you knew Troll 1 really was a knave (i.e., their statement was
+false)? Share your initial thoughts on this.
+
 A:
 
 Let's think this through step by step by assuming the first Troll is lying.
 
 If "If I am a knave, then there are exactly two knights here." = False:
 
-Then: Troll 1 = knave, BUT that doesn't meant that there are exactly two
-knights. In other words, the other two could be either knaves or knights. But we
-know that this troll is a knave.
+So we know he is lying. Although he is indeed a knave, as he claims, we cannot
+trust that his presumption, that there are exactly two knights here is true,
+because we can assume he is lying from the "Try it" assumption.
 
-Moving on, we have:
+Moving on we have Troll 2:
 
-Troll 2: "Troll 1 is lying"
+Troll 2: Troll 1 is lying.
 
-If Troll 2 is lying, then Troll 1 is not lying (i.e. a knight), and this
-invalidates our previous assumption that Troll 1 is lying, and therefore we
-still don't know if the other two trolls are knights.
+This troll is a knight, since we know that Troll 1 is a knave
 
-Moving on to troll 3:
+Troll 3: Either we are all knaves, or at least one of us is a knight.
 
-Troll 3: "Either we are all knaves, or at least one of us is a knight."
-
-If we assume troll 3 is also lying, then all three trolls are knaves, and we
-have solved their riddle and pass, because he is no knight.
-
-These are just my initial thoughts on this based off the prompt that we could
-start just thinking about this if Troll 1 were lying.
-
-$$ \therefore $$
+Troll 3 is also a knight, since we know there is one knight here, we know that
+all the Trolls are not knaves, and his second presumption, that there is _at
+least one_ knight holds true, as now we have 2. Interestingly, if he had said
+"exactly one of us is a knight", this problem would become inconsistent and
+unsolvable.
