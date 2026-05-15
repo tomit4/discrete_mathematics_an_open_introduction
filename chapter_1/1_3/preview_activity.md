@@ -22,7 +22,7 @@ A. $(P \wedge G) \to \neg B$
 
 This is the answer. $\wedge$ stands in for "and", and the given statement
 declares that whenever Holmes wears a purple shirt, $P$ and the green vest, $G$
-($P \wedge G$), then he chooses to not wear a bow to $\to \neg B$.
+($P \wedge G$), then he chooses to not wear a bow tie $\to \neg B$.
 
 B. $P \wedge G \to B$
 
@@ -139,7 +139,7 @@ $$ P \to Q = T \to F = F $$
 
 $$ \neg P \vee Q = F \vee F = F $$
 
-Both are false, so this is not a case where both statements are true..
+Both are false, so this is not a case where both statements are true.
 
 C. You don't major in math and do get a high-paying job.
 
