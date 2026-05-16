@@ -969,6 +969,230 @@ A:
 
 (a) Every number is either even or odd.
 
+Let's start by writing the statement as is:
+
+Let $E(x)$ be "The number is even" and $O(x)$ be "the number is odd."
+
+So this original statement is:
+
+$$ \forall x (E(x) \vee O(x)) $$
+
+Then we apply a negation over the whole statement:
+
+$$ \neg\forall x (E(x) \vee O(x)) $$
+
+From the section on Quantifiers and negation we know that:
+
+$\neg \forall x P(x)$ is equivalent to $\exists x \neg P(x)$.
+
+$\neg \exists x P(x)$ is equivalent to $\forall x \neg P(x)$.
+
+So we can write this as logically equivalent to:
+
+$$ \neg\forall x (E(x) \vee O(x)) \equiv \exists x \neg (E(x) \vee O(x)) $$
+
+Taking this equivalency we can rewrite it using De Morgan's Laws:
+
+$$ \exists x \neg (E(x) \vee O(x)) $$
+
+$$ \exists x (\neg E(x) \wedge \neg O(x)) $$
+
+Which says:
+
+"There exists at least one number $x$ which is neither even nor odd."
+
 (b) There is a sequence that is both arithmetic and geometric.
 
+Let $x$ be some sequence, and let $A(x)$ be "The sequence is arithmetic", and
+$G(x)$ be "The sequence is geometric."
+
+So our original statement reads as:
+
+$$ \exists x (A(x) \wedge G(x)) $$
+
+Now we negate it:
+
+$$ \neg\exists x (A(x) \wedge G(x)) $$
+
+Again, we look to the section on Quantifiers and negation:
+
+$\neg \forall x P(x)$ is equivalent to $\exists x \neg P(x)$.
+
+$\neg \exists x P(x)$ is equivalent to $\forall x \neg P(x)$.
+
+$$ \neg\exists x (A(x) \wedge G(x)) \equiv \forall x \neg (A(x) \wedge G(x)) $$
+
+And apply De Morgan's Laws:
+
+$$ \forall x \neg (A(x) \wedge G(x)) $$
+
+$$ \forall x (\neg A(x) \vee \neg G(x)) $$
+
+Which says:
+
+"All sequences $x$ are either not arithmetic or not geometric."
+
 \(c\) For all numbers, $n$, if $n$ is prime, then $n + 3$ is not prime.
+
+Let $P(n)$ be "The number $n$ is prime".
+
+So the original statement is:
+
+$$ \forall n (P(n) \to \neg P(n + 3)) $$
+
+Let's write this implication as a disjunction:
+
+$$ \forall n (\neg P(n) \vee \neg P(n + 3)) $$
+
+Again, we look to the section on Quantifiers and negation:
+
+$\neg \forall x P(x)$ is equivalent to $\exists x \neg P(x)$.
+
+$\neg \exists x P(x)$ is equivalent to $\forall x \neg P(x)$.
+
+$$ \forall n (\neg P(n) \vee \neg P(n + 3)) \equiv \exists n \neg(\neg P(n) \vee \neg P(n + 3)) $$
+
+$$ \exists n \neg(\neg P(n) \vee \neg P(n + 3)) $$
+
+Now we use De Morgan's Laws:
+
+$$ \exists n (P(n) \wedge P(n + 3)) $$
+
+Now this says:
+
+"There exists some number $n$ for which $n$ is prime and $n + 3$ is prime."
+
+16.
+
+Q: We can simplify statements in predicate logic using our rules for passing
+negations over quantifiers before applying logical equivalence to the "inside"
+propositional part. Simplify the statements below (so negation appears only
+directly next to predicates).
+
+(a) $\neg \exists x \forall y (\neg O(x) \vee E(y))$.
+
+(b)
+$\neg \forall x \neg \forall y \neg(x < y \wedge \exists z (x < z \vee y < z))$.
+
+\(c\) There is a number $n$ for which no other number is less than or equal to
+$n$.
+
+(d) It is false that for every number $n$ there are two other numbers which $n$
+is between.
+
+A:
+
+Each of these will likely use Quantifiers and negation:
+
+$\neg \forall x P(x)$ is equivalent to $\exists x \neg P(x)$.
+
+$\neg \exists x P(x)$ is equivalent to $\forall x \neg P(x)$.
+
+(a) $\neg \exists x \forall y (\neg O(x) \vee E(y))$.
+
+$$ \neg \exists x \forall y (\neg O(x) \vee E(y)) $$
+
+$$ \forall x \neg \forall y (\neg O(x) \vee E(y)) $$
+
+$$ \forall x \exists y \neg(\neg O(x) \vee E(y)) $$
+
+Then use De Morgan's Laws:
+
+$$ \forall x \exists y (O(x) \wedge \neg E(y)) $$
+
+(b)
+$\neg \forall x \neg \forall y \neg(x < y \wedge \exists z (x < z \vee y < z))$.
+
+$$ \neg \forall x \neg \forall y \neg(x < y \wedge \exists z (x < z \vee y < z)) $$
+
+$$ \exists x \neg\neg \forall y \neg(x < y \wedge \exists z (x < z \vee y < z)) $$
+
+$$ \exists x \forall y \neg(x < y \wedge \exists z (x < z \vee y < z)) $$
+
+$$ \exists x \forall y (\neg(x < y) \vee \neg\exists z (x < z \vee y < z)) $$
+
+$$ \exists x \forall y ((x \geq y) \vee \forall z \neg(x < z \vee y < z)) $$
+
+$$ \exists x \forall y ((x \geq y) \vee \forall z (\neg(x < z) \wedge \neg(y < z))) $$
+
+$$ \exists x \forall y ((x \geq y) \vee \forall z ((x \geq z) \wedge (y \geq z))) $$
+
+\(c\) There is a number $n$ for which no other number is less than or equal to
+$n$.
+
+Let's first translate this:
+
+$$ \exists n \neg\exists y (y \leq n) $$
+
+Now let's simplify:
+
+$$ \exists n \forall y \neg(y \leq n) $$
+
+$$ \exists n \forall y (y > n) $$
+
+(d) It is false that for every number $n$ there are two other numbers which $n$
+is between.
+
+Let's first translate this:
+
+$$ \neg \forall n \exists x \exists y (x < n < y) $$
+
+Now let's simplify:
+
+$$ \exists n \neg\exists x \exists y (x < n < y) $$
+
+$$ \exists n \forall x \neg\exists y (x < n < y) $$
+
+$$ \exists n \forall x \forall y \neg(x < n < y) $$
+
+In order to further simplify, it is best that we express $x < n < y$ as
+$x < n \wedge n < y$:
+
+$$ \exists n \forall x \forall y \neg(x < n \wedge n < y) $$
+
+Now we can apply De Morgan's Laws:
+
+$$ \exists n \forall x \forall y (\neg(x < n) \vee \neg(n < y)) $$
+
+$$ \exists n \forall x \forall y ((x \geq n) \vee (n \geq y)) $$
+
+17.
+
+Q: Simplify the statements below to the point that negation symbols occur only
+directly next to predicates.
+
+(a) $\neg \forall x \forall y (x < y \vee y < x)$.
+
+(b) $\neg (\exists x P(x) \to \forall y P(y))$.
+
+A:
+
+(a) $\neg \forall x \forall y (x < y \vee y < x)$.
+
+$$ \neg \forall x \forall y (x < y \vee y < x) $$
+
+$$ \exists x \neg\forall y (x < y \vee y < x) $$
+
+$$ \exists x \exists y \neg(x < y \vee y < x) $$
+
+$$ \exists x \exists y (\neg(x < y) \wedge \neg(y < x)) $$
+
+$$ \exists x \exists y ((x \geq y) \wedge (y \geq x)) $$
+
+(b) $\neg (\exists x P(x) \to \forall y P(y))$.
+
+$$ \neg (\exists x P(x) \to \forall y P(y)) $$
+
+Recall that implications are disjunctions:
+
+$$ P \to Q \equiv \neg P \vee Q $$
+
+So we can express our original statement as:
+
+$$ \neg (\neg \exists x P(x) \vee \forall y P(y)) $$
+
+Now use De Morgan's Laws:
+
+$$ \exists x P(x) \wedge \neg \forall y P(y) $$
+
+$$ \exists x P(x) \wedge \exists y \neg P(y) $$
