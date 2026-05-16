@@ -496,3 +496,479 @@ $$ (S \wedge (C \vee \neg C)) \wedge \neg C $$
 $$ (S \wedge T) \wedge \neg C $$
 
 $$ \boxed{S \wedge \neg C} $$
+
+7.
+
+Q: Use De Morgan's Laws and any other logical equivalence facts you know to
+simplify the following statements. Show all your steps. Your final statements
+should have negations only appear directly next to the sentence variables or
+predicates ($P$, $Q$, $E(x)$, etc.), and no double negations. It would be a good
+idea to use only conjunctions, disjuctions, and negations.
+
+(a) $\neg((\neg P \wedge Q) \vee \neg (R \vee \neg S))$.
+
+$$ \neg((\neg P \wedge Q) \vee \neg (R \vee \neg S)) $$
+
+Let's "distribute" the outside negation first:
+
+$$ \neg(\neg P \wedge Q) \wedge \neg\neg (R \vee \neg S) $$
+
+Get rid of the double negative on the second "term":
+
+$$ \neg(\neg P \wedge Q) \wedge (R \vee \neg S) $$
+
+And "distribute" the negation on the first "term":
+
+$$ (\neg\neg P \vee \neg Q) \wedge (R \vee \neg S) $$
+
+And again, get rid of the double negative:
+
+$$ \boxed{(P \vee \neg Q) \wedge (R \vee \neg S)} $$
+
+(b) $\neg ((\neg P \to \neg Q) \wedge (\neg Q \to R))$ (careful with the
+implications)
+
+$$ \neg ((\neg P \to \neg Q) \wedge (\neg Q \to R)) $$
+
+First let's "distribute" the outside negation:
+
+$$ \neg(\neg P \to \neg Q) \vee \neg(\neg Q \to R) $$
+
+Now apply "Implications are Disjunctions":
+
+$$ \neg(P \vee \neg Q) \vee \neg(Q \vee R) $$
+
+Note the reason it takes this form is that implications are disjunctions only
+negates the antecedent (the first term of an if/then statement, not the
+consequent). Now we can apply De Morgan's Laws again to each "term":
+
+$$ (\neg P \wedge Q) \vee (\neg Q \wedge \neg R) $$
+
+\(c\) For both parts above, verify your answers are correct using truth tables.
+That is, use a truth table to check that the given statement and your proposed
+simplification are actually logically equivalent.
+
+For part (a), we start at: $\neg((\neg P \wedge Q) \vee \neg (R \vee \neg S))$,
+and we end at $(P \vee \neg Q) \wedge (R \vee \neg S)$:
+
+| $P$ | $Q$ | $R$ | $S$ | $\neg((\neg P \wedge Q) \vee \neg(R \vee \neg S))$ | $(P \vee \neg Q) \wedge (R \vee \neg S)$ |
+| --- | --- | --- | --- | -------------------------------------------------- | ---------------------------------------- |
+| T   | T   | T   | T   | T                                                  | T                                        |
+| T   | T   | T   | F   | T                                                  | T                                        |
+| T   | T   | F   | T   | F                                                  | F                                        |
+| T   | T   | F   | F   | T                                                  | T                                        |
+| T   | F   | T   | T   | T                                                  | T                                        |
+| T   | F   | T   | F   | T                                                  | T                                        |
+| T   | F   | F   | T   | F                                                  | F                                        |
+| T   | F   | F   | F   | F                                                  | F                                        |
+| F   | T   | T   | T   | F                                                  | F                                        |
+| F   | T   | T   | F   | F                                                  | F                                        |
+| F   | T   | F   | T   | F                                                  | F                                        |
+| F   | T   | F   | F   | F                                                  | F                                        |
+| F   | F   | T   | T   | T                                                  | T                                        |
+| F   | F   | T   | F   | T                                                  | T                                        |
+| F   | F   | F   | T   | F                                                  | F                                        |
+| F   | F   | F   | F   | T                                                  | T                                        |
+
+These two statements are logically equivalent, as their truth tables, when
+evaluated, produce exactly the same results in all cases. It is reasonable to
+conclude that:
+
+$$ \neg((\neg P \wedge Q) \vee \neg(R \vee \neg S)) \equiv (P \vee \neg Q) \wedge (R \vee \neg S) $$
+
+8.
+
+Q: Consider the statement, "If a number is triangular or square, then it is not
+prime"
+
+(a) Make a truth table for the statement $(T \vee S) \to \neg P$.
+
+(b) If you believed the statement was _false_, what properties would a
+counterexample need to possess? Explain by referencing your truth table.
+
+\(c\) If the statement were true, what could you conclude about the number 5657,
+which is definitely prime? Again, explain using the truth table.
+
+A:
+
+(a) Make a truth table for the statement $(T \vee S) \to \neg P$.
+
+| $T$ | $S$ | $P$ | $(T \vee S)$ | $\neg P$ | $(T \vee S) \to \neg P$ |
+| --- | --- | --- | ------------ | -------- | ----------------------- |
+| T   | T   | T   | T            | F        | F                       |
+| T   | T   | F   | T            | T        | T                       |
+| T   | F   | T   | T            | F        | F                       |
+| T   | F   | F   | T            | T        | T                       |
+| F   | T   | T   | T            | F        | F                       |
+| F   | T   | F   | T            | T        | T                       |
+| F   | F   | T   | F            | F        | T                       |
+| F   | F   | F   | F            | T        | T                       |
+
+(b) If you believed the statement was _false_, what properties would a
+counterexample need to possess? Explain by referencing your truth table.
+
+The only examples where the statement $(T \vee S) \to \neg P$ are false are
+indicated by these rows from the truth table:
+
+| $T$ | $S$ | $P$ | $(T \vee S)$ | $\neg P$ | $(T \vee S) \to \neg P$ |
+| --- | --- | --- | ------------ | -------- | ----------------------- |
+| T   | T   | T   | T            | F        | F                       |
+| T   | F   | T   | T            | F        | F                       |
+| F   | T   | T   | T            | F        | F                       |
+
+From the truth table, $(T \vee S) \to \neg P$ is false exactly when:
+
+- $T \vee S = T$ (the number is triangular or square, or both), and
+
+- $\neg P = F$, meaning $P = T$ (the number is prime).
+
+So a counterexample must be a prime number that is either triangular, square, or
+both.
+
+In other words, the number must satisfy:
+
+$$ P = T \quad \text{ and } \quad (T \vee S) = T $$
+
+Equivalently, the number is prime but also has at least one of the properties
+"triangular" or "square."
+
+\(c\) If the statement were true, what could you conclude about the number 5657,
+which is definitely prime? Again, explain using the truth table.
+
+Let us express this as $P(5657) = T$, and also the statement itself is true,
+$(T \vee S) \to \neg P = T$.
+
+If we isolate our table where $P = T$ and $(T \vee S) \to \neg P = T$, then we
+get:
+
+| $T$ | $S$ | $P$ | $(T \vee S)$ | $\neg P$ | $(T \vee S) \to \neg P$ |
+| --- | --- | --- | ------------ | -------- | ----------------------- |
+| F   | F   | T   | F            | F        | T                       |
+
+This implies that since 5657 is prime, and the statement is true, that the
+hypothesis $(T \vee S)$ in this case is false, while the conclusion, $\neg P$ is
+true. Therefore, 5657 is neither triangular nor square.
+
+9.
+
+Q: Tommy Flanagan was telling you what he ate yesterday afternoon. He tells you,
+"I had either popcorn or raisins. Also, if I had cucumber sandwiches, then I had
+soda. But I didn't drink soda or tea." Of course, you know that Tommy is the
+world's worst liar, and everything he says is false. What did Tommy eat?
+
+Justify your answer by writing all of Tommy's statements using sentence
+variables ($P$, $Q$, $R$, $S$, $T$), taking their negations, and using these to
+deduce what Tommy actually ate.
+
+A:
+
+Let the following variables represent the following statements:
+
+$P$: "Tommy had popcorn."
+
+$Q$: "Tommy had raisins."
+
+$R$: "Tommy had cucumber sandwiches."
+
+$S$: "Tommy had soda."
+
+$T$: "Tommy had tea."
+
+Breaking this down for later use, we get:
+
+$(P \vee Q)$: "Tommy had either popcorn or raisins."
+
+$R \to S$ "If Tommy had cucumber sandwiches, then he had soda."
+
+$\neg(S \vee T)$: "Tommy doesn't drink soda or tea."
+
+This evaluates to:
+
+$$ (P \vee Q) \wedge (R \to S) \wedge \neg(S \vee T) $$
+
+And lastly we know Tommy is a liar, so we negate the entire statement:
+
+$$ \neg((P \vee Q) \wedge (R \to S) \wedge \neg(S \vee T)) $$
+
+Let's use De Morgan's Laws and Implications are Disjunctions and negations to
+see if we can't express this in a way that we can find out what Tommy ate.
+
+First, implications are disjunctions for the "middle term":
+
+$$ \neg((P \vee Q) \wedge (\neg R \vee S) \wedge \neg(S \vee T)) $$
+
+Let's apply De Morgan's Laws to the "last term":
+
+$$ \neg((P \vee Q) \wedge (\neg R \vee S) \wedge (\neg S \wedge \neg T)) $$
+
+And De Morgan's Laws again on the entire statement:
+
+$$ \neg(P \vee Q) \vee \neg(\neg R \vee S) \vee \neg(\neg S \wedge \neg T) $$
+
+$$ (\neg P \wedge \neg Q) \vee (R \wedge \neg S) \vee (S \vee T) $$
+
+Ultimately now we have to prove that this statement will always be false, since
+Tommy is a liar.
+
+$$ (\neg P \wedge \neg Q) \vee (R \wedge \neg S) \vee (S \vee T) = F $$
+
+Since these are three separate atomic statements joined by disjunctions, this
+means that each individual statement must be false.
+
+$$ (\neg P \wedge \neg Q) = F $$
+
+So this means that Tommy did not have popcorn or raisins, but he might have had
+one or the other.
+
+$$ (R \wedge \neg S) = F $$
+
+This means that Tommy did not have cucumber sandwiches, but he did have a soda,
+or he did have cucumber sandwiches and did not have a soda.
+
+$$ (S \vee T) = F $$
+
+This means that Tommy didn't drink Soda or Tea. He didn't drink anything. This
+is the most definitive statement. Knowing this, we can further refine our
+evaluation of the other two statements.
+
+$$ (R \wedge \neg S) = F $$
+
+Since we know that $\neg S = T$, this means that $R = F$. Tommy did not eat
+cucumber sandwiches.
+
+$$ (\neg P \wedge \neg Q) = F $$
+
+Here we know the least, we know that Tommy either had popcorn or raisins, but he
+had at least one of them.
+
+In conclusion, we know the following:
+
+- Tommy did not drink soda or tea
+- Tommy did not eat cucumber sandwiches
+- Tommy either had either popcorn or raisins or both.
+
+10. Can you chain implications together? That is, if $P \to Q$ and $Q \to R$,
+    does that mean the $P \to R$? Prove that the following is a valid deduction
+    rule:
+
+$$
+P \to Q \\
+Q \to R \\
+\overline{\therefore P \to R}
+$$
+
+This is solved best when using a truth table:
+
+| $P$ | $Q$ | $R$ | $P \to Q$ | $Q \to R$ | $P \to R$ |
+| --- | --- | --- | --------- | --------- | --------- |
+| T   | T   | T   | T         | T         | T         |
+| T   | T   | F   | T         | F         | F         |
+| T   | F   | T   | F         | T         | T         |
+| T   | F   | F   | F         | T         | F         |
+| F   | T   | T   | T         | T         | T         |
+| F   | T   | F   | T         | F         | T         |
+| F   | F   | T   | T         | T         | T         |
+| F   | F   | F   | T         | T         | T         |
+
+We're only concerned where our antecedents are true, so let's highlight which
+ones have antecedents that are both true, wherever this is the case, we will
+also highlight the conclusion's true/false value and compare it to the
+antecedents.
+
+| $P$ | $Q$ | $R$ | $P \to Q$ | $Q \to R$ | $P \to R$ |
+| --- | --- | --- | --------- | --------- | --------- |
+| T   | T   | T   | **T**     | **T**     | **T**     |
+| T   | T   | F   | T         | F         | F         |
+| T   | F   | T   | F         | T         | T         |
+| T   | F   | F   | F         | T         | F         |
+| F   | T   | T   | **T**     | **T**     | **T**     |
+| F   | T   | F   | T         | F         | T         |
+| F   | F   | T   | **T**     | **T**     | **T**     |
+| F   | F   | F   | **T**     | **T**     | **T**     |
+
+And as we can see, when we do this, the consequent is also always true,
+therefore this is a valid deduction rule.
+
+11.
+
+Q: Suppose $P$ and $Q$ are (possibly molecular) propositional statements. Prove
+that $P$ and $Q$ are logically equivalent if and only if $P \leftrightarrow Q$
+is a tautology.
+
+A:
+
+Let's break this down with the standard "if and only if" truth table:
+
+| $P$ | $Q$ | $P \leftrightarrow Q$ |
+| --- | --- | --------------------- |
+| T   | T   | T                     |
+| T   | F   | F                     |
+| F   | T   | F                     |
+| F   | F   | T                     |
+
+For $P$ and $Q$ to be logically equivalent, both of the following statements
+must be true:
+
+$$ P \to Q $$
+
+And
+
+$$ Q \to P $$
+
+This evaluates to:
+
+$$ (P \to Q) \wedge (Q \to P) $$
+
+Let's expand our truth table to include these statements as well so we can
+further evaluate whether or not $P \leftrightarrow Q$ is a tautology:
+
+| $P$ | $Q$ | $P \to Q$ | $Q \to P$ | $(P \to Q) \wedge (Q \to P)$ | $P \leftrightarrow Q$ |
+| --- | --- | --------- | --------- | ---------------------------- | --------------------- |
+| T   | T   | T         | T         | T                            | T                     |
+| T   | F   | F         | T         | F                            | F                     |
+| F   | T   | T         | F         | F                            | F                     |
+| F   | F   | T         | T         | T                            | T                     |
+
+As seen in the last two columns, $(P \to Q) \wedge (Q \to P)$ and
+$P \leftrightarrow Q$ have identical truth values in every row. This means they
+are logically equivalent. Since $P \leftrightarrow Q$ is true exactly when $P$
+and $Q$ have the same truth value, it follows that it is true in all cases where
+logical equivalence holds, and thus characterizes a tautology condition.
+
+12.
+
+Q: Suppose $P_1, P_2, \dots , P_n$ and $Q$ are (possibly molecular)
+propositional statements. Suppose further that
+
+$$
+P_1 \\
+P_2 \\
+\vdots \\
+P_n \\
+\overline{\therefore Q}
+$$
+
+is a valid deduction rule. Prove that the statement
+
+$$ (P_1 \wedge P_2 \wedge \dots \wedge P_n) \to Q $$
+
+is a tautology.
+
+A:
+
+A deduction rule is valid where there are no premises that result in a false
+conclusion. Since we know that:
+
+$$
+P_1 \\
+P_2 \\
+\vdots \\
+P_n \\
+\overline{\therefore Q}
+$$
+
+is a valid deduction rule, we also know then that there is no case where all
+$P_1 \dots P_n$ are true and $Q$ is false. The implication is that
+$(P_1 \wedge \dots \wedge P_n) \to Q$ is always true, therefore it is a
+tautology.
+
+$$ (P_1 \wedge \dots \wedge P_n) \to Q $$
+
+13.
+
+Q: Consider the statements below. Translate each into symbols, using the
+predicate $F(x, y)$ for "person $x$ can be fooled at any time $y$." Decide
+whether any of the statements are equivalent to each other, or whether any imply
+any others, in this context or in general.
+
+(a) You can fool some people all of the time.
+
+(b) You can fool everyone some of the time.
+
+\(c\) You can always fool some people.
+
+(d) Sometimes you can fool everyone.
+
+A:
+
+Let's first just translate each of these into symbols
+
+(a) You can fool some people all of the time.
+
+$$ \exists x \forall y F(x, y) $$
+
+(b) You can fool everyone some of the time.
+
+$$ \forall x \exists y F(x, y) $$
+
+\(c\) You can always fool some people.
+
+$$ \forall y \exists x F(x, y) $$
+
+(d) Sometimes you can fool everyone.
+
+$$ \exists y \forall x F(x, y) $$
+
+None of these statements are logically equivalent to each other. Equivalencies
+with quantifiers always involve some negation of the quantifier(s) or the
+antecedent(s). There are no negations here and so none of them are logically
+equivalent. However yes, some do imply others.
+
+(a) does imply \(c\):
+
+$$ \exists x \forall y F(x, y) \to \forall y \exists x F(x, y) $$
+
+"If there exists some person $x$ for all times $y$ for which that person is
+fooled, then for all times $y$, there is at least one person $x$ who is fooled."
+
+and (d) does imply (b):
+
+$$ \exists y \forall x F(x, y) \to forall x \exists y F(x, y) $$
+
+"If there exists some time $y$ for all people $x$ where all people are fooled,
+then for all people $x$ there exists at least one time $y$ where all people are
+fooled."
+
+14.
+
+Q: Suppose $P(x)$ is some predicate for which the statement $\forall x P(x)$ is
+true. Is it also the case that $\exists x P(x)$ is true? In other words, is the
+statement $\forall x P(x) \to \exists x P(x)$ always true? Is the converse
+always true? Assume the domain of discourse is non-empty.
+
+A:
+
+Let's break this down:
+
+Suppose $P(x)$ is some predicate for which the statement $\forall x P(x)$ is
+true. Is it also the case that $\exists x P(x)$ is true?
+
+Is this true?:
+
+$$ \forall x P(x) \to \exists x P(x) $$
+
+Since we know that $\forall x P(x)$ is true for all $x$, $P(x)$ holds for every
+element of the domain. Because we also know that the domain of discourse is not
+empty, we can choose some element $a$ for which $P(a)$ is true. Therefore,
+$\exists x P(x)$ is true.
+
+15.
+
+Q: Simplifying negations will be especially useful when we try to prove a
+statement by considering what would happen if it were false. For each statement
+below, write the _negation_ of the statement as simply as possible. Don't just
+say, "It is false that..."
+
+(a) Every number is either even or odd.
+
+(b) There is a sequence that is both arithmetic and geometric.
+
+\(c\) For all numbers, $n$, if $n$ is prime, then $n + 3$ is not prime.
+
+A:
+
+(a) Every number is either even or odd.
+
+(b) There is a sequence that is both arithmetic and geometric.
+
+\(c\) For all numbers, $n$, if $n$ is prime, then $n + 3$ is not prime.
