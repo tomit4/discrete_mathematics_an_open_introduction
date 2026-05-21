@@ -19,6 +19,8 @@ D. Suppose there is an element $b$ in $B$ that is not in $A$.
 
 A:
 
+B would be the best way to start.
+
 2.
 
 Q: Suppose you wanted to prove that for all sets $A$ and $B$ that
@@ -34,6 +36,8 @@ C. Let $a$ be an element of $A$.
 D. Let $a$ be an element of $A \cap B$.
 
 A:
+
+B would be the best way to start.
 
 3.
 
@@ -61,6 +65,15 @@ $B \subseteq A$".
 - Suppose $A \subseteq B$.
 
 A:
+
+- Suppose $B \subseteq A \cap B$, then let $b$ be an element of $B$.
+
+- Then $b$ is an element of $B$ since $B \subseteq A \cap B$.
+
+- Since $A \cap B$ contains all the elements that are in both $A$ and $B$, $b$
+  is an element of $A$.
+
+- Therefore $B \subseteq A$.
 
 4.
 
@@ -90,6 +103,28 @@ statements below to form a correct proof.
 - Let $x$ be an element of $A$.
 
 A:
+
+- First we will prove that $(A \cap B) \cup A \subseteq A$.
+
+- Let $x$ be an element of $(A \cap B) \cup A$.
+
+- Then $x$ is an element of $A \cap B$, or $x$ is an element of $A$.
+
+- So in particular, $x$ is an element of $A$.
+
+- Therefore $(A \cap B) \cup A \subseteq A$.
+
+- Second, we will prove that $A \subseteq (A \cap B) \cup A$.
+
+- Let $x$ be an element of $A$.
+
+- Then $x$ is an element of $(A \cap B) \cup A$, since $x$ is in $A$ or in the
+  other set.
+
+- Therefore $A \subseteq (A \cap B) \cup A$.
+
+- Since $(A \cap B) \cup A \subseteq A$ and $A \subseteq (A \cap B) \cup A$, we
+  have $(A \cap B) \cup A = A$.
 
 5.
 
@@ -121,3 +156,17 @@ form a correct proof.
 - Let $a$ be an element of $f^{-1}(B_1)$.
 
 A:
+
+---
+
+- Suppose $B_1 \subseteq B_2$.
+
+- Let $a$ be an element of $f^{-1}(B_1)$.
+
+- This means that $f(a)$ is an element of $B_1$.
+
+- Since $B_1 \subseteq B_2$, $f(a)$ is an element of $B_2$.
+
+- This then means that $a$ is an element of $f^{-1}(B_2)$.
+
+- Therefore $f^{-1}(B_1) \subseteq f^{-1}(B_2)$.

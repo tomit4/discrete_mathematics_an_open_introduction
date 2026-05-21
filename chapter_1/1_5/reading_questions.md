@@ -15,6 +15,8 @@ D. The codomain $B$ is no smaller than the domain $A$.
 
 A:
 
+Answer A is the definition of a function $f: A \to B$ being injective.
+
 2.
 
 Q: When would you most likely use element chasing as part of a proof?
@@ -28,3 +30,5 @@ C. When proving that a relation is transitive.
 D. When proving that a graph has an odd number of edges.
 
 A:
+
+A is the correct answer.
