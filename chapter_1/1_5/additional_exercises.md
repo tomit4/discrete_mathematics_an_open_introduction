@@ -374,6 +374,98 @@ $f(f^{-1}(D)) \neq D$.
 
 A:
 
+(A) For $f: \mathbb{N} \to \mathbb{N}$ defined by $f(n) = n^2$, what are each of
+the following sets?
+
+(a) $f^{-1}(\{1, 4, 9\})$
+
+$$ f^{-1}(\{1, 4, 9\}) = \{1, 2, 3\} $$
+
+(b) $f^{-1}(\{2, 3, 5, 7\})$
+
+$$ f^{-1}(\{2, 3, 5, 7\}) = \emptyset $$
+
+There are no natural numbers, $n$ such that $n^2 \in \{2, 3, 5, 7\}$ since none
+of these numbers are perfect squares.
+
+\(c\) $f^{-1}(\{1, 2, \dots, 10\})$
+
+$$ f^{-1}(\{1, 2, \dots, 10\}) = \{1, 2, 3\} $$
+
+(B) Prove that for any set $C \subseteq X, C \subseteq f^{-1}(f(C))$.
+
+- Let $x$ be some element $x \in C$.
+
+- If we then apply the function $f$ to $x$ as $f(x)$, since $C \subseteq X$, it
+  follows that $f(x) \in f(C)$ by the definition of the image of a set.
+
+- Since $f(x) \in f(C)$, it then follows that $x \in f^{-1}(f(C))$ by definition
+  of an inverse image of a set.
+
+- Therefore $C \subseteq f^{-1}(f(C))$.
+
+\(C\) Give an example of a function $f$ and a set $C$ such that
+$C \neq f^{-1}*(f(C))$.
+
+- Let $X$ be the set $\{1, 2\}$, and let $C$ bu a subset of $X$, $C \subseteq X$
+  such that $C = \{1\}$.
+
+- Let $f$ be a function defined as:
+
+$$ f: X \to Y \quad f(x) = 0 \forall x \in X $$
+
+- Therefore $f(C) = \{0\}$
+
+- By the definition of an inverse image of a set
+  $f^{-1}(f(C)) = \{x \in X: f(x)\in f(C)\}$, so therefore
+  $f^{-1}(f(C)) = \{x \in X: f(x) = 0\}$
+
+- Since $X = \{1, 2\}$, then $f(1) = 0$ and $f(2) = 0$, so
+  $f^{-1}(C) = \{1, 2\}$.
+
+- Therefore $C = \{1\}$ and $f^{-1}(f(C)) = \{1, 2\}$, which means that
+  $C \neq f^{-1}(f(C))$.
+
+(D) Prove that for any set $D \subseteq Y, f(f^{-1}(D)) \subseteq D$.
+
+- By definition of an inverse image:
+
+$$ f^{-1}(D) = \{x \in X: f(x) \in D\} $$
+
+- By applying $f$ to the inverse, we get:
+
+$$ f(f^{-1}(D)) = \{f(x): x \in X, f(x) \in D\} $$
+
+- Since $x \in f^{-1}(D)$, we have $f(x) \in D$, so every element of
+  $f(f^{-1}(D))$ lies in $D$.
+
+- Therefore, $f(f^{-1}(D)) \subseteq D$.
+
+(E) Give an example of a function $f$ and a set $D$ such that
+$f(f^{-1}(D)) \neq D$.
+
+- Let the following be:
+
+$$ X = \{1, 2} $$
+
+$$ Y = \{0, 1\} $$
+
+$$ f(1) = 0, f(2) = 0 $$
+
+$$ D = \{0, 1\} $$
+
+- The inverse image is:
+
+$$ f^{-1}(D) = \{1, 2\} $$
+
+- Apply $f$ to the inverse:
+
+$$ f(f^{-1}(D)) = f(\{1, 2\}) = \{0\} $$
+
+- Comparing:
+
+$$ f(f^{-1}(D)) = \{0\} \neq \{0, 1\} = D $$
+
 10.
 
 Q: Let $f: X \to Y$ be a function, and let $A$ and $B$ be subsets of $Y$. Prove
@@ -381,12 +473,74 @@ that $f^{-1}(A \cap B) = f^{-1}(A) \cap f^{-1}(B)$.
 
 A:
 
+- Let $x \in f^{-1}(A \cap B)$.
+
+- By definition of an inverse image, this means that $f(x) \in A \cap B$
+
+- This means that $f(x) \in A \wedge f(x) \in B$ by definition of an
+  intersection.
+
+- It follows then that $x \in f^{-1}(A) \cap f^{-1}(B)$
+
+- Therefore $f^{-1}(A \cap B) \subseteq f^{-1}(A) \cap f^{-1}(B)$
+
+To prove equality, we must also show the reverse inclusion.
+
+- Let $x \in f^{-1}(A) \cap f^{-1}(B)$.
+
+- This means that $x \in f^{-1}(A) \wedge x \in f^{-1}(B)$ by definition of an
+  intersection.
+
+- It follows then that $f(x) \in A \wedge f(x) \in B$ by definition of an image
+  of a set.
+
+- Then $f(x) \in A \cap B$ by definition of an intersection.
+
+- So $x \in f^{-1}(A \cap B)$ by definition of an inverse image of a set.
+
+- Therefore $f^{-1}(A) \cap f^{-1}(B) \subseteq f^{-1}(A \cap B)$
+
+Since both inclusions hold, this proves that:
+
+$$ f^{-1}(A \cap B) = f^{-1}(A) \cap f^{-1}(B) $$
+
 11.
 
 Q: Let $f: X \to Y$ be a function, and let $A$ and $B$ be subsets of $Y$. Prove
 that $f^{-1}(A \cup B) = f^{-1}(A) \cup f^{-1}(B)$.
 
 A:
+
+- Let $x \in f^{-1}(A \cup B)$
+
+- Then $f(x) \in A \cup B$ by definition of an inverse image.
+
+- This means that $f(x) \in A \vee f(x) \in B$ by definition of a union.
+
+- It follows then that $x \in f^{-1}(A) \vee x \in f^{-1}(B)$ by definition of
+  an inverse image.
+
+- So $x \in f^{-1}(A) \cup f^{-1}(B)$ by definition of a union.
+
+- Therefore $f^{-1}(A \cup B) \subseteq f^{-1}(A) \cup f^{-1}(B)$
+
+Now reverse the inclusion.
+
+- Let $x \in f^{-1}(A) \cup f^{-1}(B)$
+
+- Then $x \in f^{-1}(A) \vee x \in f^{-1}(B)$ by definition of a union.
+
+- So $f(x) \in A \vee f(x) \in B$ by definition of an inverse image.
+
+- It then follows that $f(x) \in A \cup B$ by definition of a union.
+
+- So $x \in f^{-1}(A \cup B)$ by definition of an inverse image.
+
+- Therefore $f^{-1}(A) \cup f^{-1}(B) \subseteq f^{-1}(A \cup B)$
+
+Since both inclusions hold, we have proved that:
+
+$$ f^{-1}(A \cup B) = f^{-1}(A) \cup f^{-1}(B) $$
 
 12.
 
@@ -396,11 +550,48 @@ it. If it is not, give a counterexample.
 (a) The relation "$|$" (divides) on $\mathbb{Z}$ defined by $a|b$ provided $b$
 is a multiple of $a$.
 
+$a|b$ is transitive on $\mathbb{Z}$ provided $b$ is a multiple of $a$.
+
+Let $k$ be some multiple of $a$, this means that:
+
+$$ b = a \cdot k $$
+
+Let $c$ then be a multiple of $b$, $c|b$. Then let $m$ be some multiple of $c$.
+This would then mean that:
+
+$$ c = b \cdot m $$
+
+$$ c = (a \cdot k) \cdot m = a(km) $$
+
+And this means then that $c$ is a multiple of $b$ and also $a$ and that $a|b|c$.
+Therefore the property is transitive since this then means that $a|c$.
+
 (b) The relation "$\leq$" (less than or equal to) on $\mathbb{R}$.
+
+The relation $\leq$ is transitive.
+
+If we have two numbers, $b$, and $c$ such that $b \leq c$, and then we also have
+a number $a$, such that $a \leq b$ , then it is true that $a \leq c$, which
+demonstrates the transitive property.
 
 \(c\) The relation "$\perp$" (is perpendicular to) on the set of lines in the
 plane.
 
+The relation $\perp$ is not transitive. Consider one horizontal plane $a$ and a
+vertical plane $b$ such that $a \perp b$. Then say you have another horizontal
+plane $c$ such that $b \perp c$. But this does NOT mean that $a \perp c$ since
+this means that $a$ and $c$ are actually horizontal to each other, i.e.
+$\overline{ac}$.
+
 (d) The relation "$\sim$" (is similar to) on the set of triangles in the plane
 (two triangles are similar if they have the same angles, bu are not necessarily
 the same size).
+
+The relation $\sim$ is transitive. Consider two triangles $A$ and $B$ such that
+$A \sim B$. This means that both $A$ and $B$ have the same angles (but not
+necessarily the same leg dimensions). If we then have a third triangle, $C$,
+such that $B \sim C$, then this means that both $B$ and $C$ have the same angles
+(but again, not necessarily the same leg dimensions). Since $A$ and $B$ have the
+same angles (are $\sim$), and $B$ and $C$ have the same angles (are $\sim$),
+then we can conclude that $A \sim C$ and we have shown that the relation $\sim$
+is transitive.
